@@ -98,7 +98,16 @@ contains(names, 'Colt', function(result){
 // the callback function with the array of unique names.
 
     //Code Here
-
+function uniq (arr, cb) {
+var sortedArr = arr.sort();
+var results = [];
+for (var i = 0; i < sortedArr.length; i++) {
+    if (sortedArr[i + 1] !== sortedArr[i]) {
+        results.push(sortedArr[i]);
+    }
+}
+cb(results);
+}
 
 
 uniq(names, function(uniqArr){
