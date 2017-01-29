@@ -159,6 +159,16 @@ var users = [
   },
 ];
 
+function getUserById(arr, iD, cb) {
+  for (var i = 0; i < arr.length; i++){
+    if (arr[i].id === iD) {
+      cb(arr[i]);
+    }
+  }
+
+}
+
+
 getUserById(users, '16t', function(user){
   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address); 
 });
